@@ -109,9 +109,9 @@ S1 & S0 & W & S1' & S0'\tabularnewline
 
 So by re-writing those truth tables we have got the following equations:
 
-\[
-Output=S_{1}\,.\,\bar{S_{0}}
-\]
+\begin{equation}
+Output=S_{1}\,.\,\bar{S_{0}}\label{eq:3_1}
+\end{equation}
 
 \[
 S_{1}^{'}=\bar{S_{1}}S_{0}w+S_{1}\bar{S_{0}}w
@@ -162,4 +162,73 @@ and Bottom Layers are shown on Figure \ref{3_3}.
 
 \end{figure}
 
+\subsection{Mealy State Machine Re-Implementation}
+
+Finally, we were asked to re-implement the Moore State machine described
+in the previous Subsections, into a Mealy State Machine. As we know,
+Mealy Machines Outputs depend on states and inputs, different from
+Moore that only depends on states. So the truth tables for the next
+state, mantains its form and formula as the moore state machine, however,
+the output truth table, and by consequence, its formula , change ash
+shown on Table \ref{3_t_3}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+State & W=0 & W=1\tabularnewline
+\hline 
+\hline 
+00 & 00/0 & 01/1\tabularnewline
+\hline 
+01 & 00/0 & 10/0\tabularnewline
+\hline 
+10 & 00/0 & 10/0\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Mealy State Machine}
+
+\end{table}
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+S1 & S0 & W & Output\tabularnewline
+\hline 
+\hline 
+0 & 0 & 0 & 0\tabularnewline
+\hline 
+0 & 0 & 1 & 1\tabularnewline
+\hline 
+0 & 1 & 0 & 0\tabularnewline
+\hline 
+0 & 1 & 1 & 0\tabularnewline
+\hline 
+1 & 0 & 0 & 0\tabularnewline
+\hline 
+1 & 0 & 1 & 0\tabularnewline
+\hline 
+1 & 1 & 0 & x\tabularnewline
+\hline 
+1 & 1 & 1 & x\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Output Truth Table}
+
+\label{3_t_3}
+
+\end{table}
+
+So the formula for the output becomes:
+
+\begin{equation}
+Output=\bar{S_{1}}\bar{S_{0}}w\label{eq:3_2}
+\end{equation}
+
+By comparing the equations (\ref{eq:3_1}) and (\ref{eq:3_2}), we
+notice that in this case, Moore machine is more efficient because
+it utilizes less lotic gates as it needs one less variable to compare.
 \end{document}
