@@ -6,4 +6,13 @@ module pump_ctrl (
     clk         //Clock
     );
 
+//Definición de las variables para los estados
+parameter FULL      2b'11;
+parameter HALF      2b'01;
+parameter EMTPY     2b'00;
+parameter HOW       2b'10;
 
+
+
+
+endmodule
