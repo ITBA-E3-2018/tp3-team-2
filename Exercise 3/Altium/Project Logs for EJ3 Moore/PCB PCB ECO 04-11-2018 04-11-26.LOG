@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=ALIMENTACION 3.3 NewDesignator=3.3V
+Change Component Designator: OldDesignator=ALIMENTACION 5V NewDesignator=5V
+Change Component Designator: OldDesignator=CLOCK NewDesignator=CLK
+Added Room: Name=Schematic
