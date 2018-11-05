@@ -17,7 +17,9 @@ initial begin
     B1 = 0;
     B2 = 0;
     reset = 1;
-    #1 reset = 0;
+    #6 reset = 0;
+    #41 reset = 1;
+    #10 reset = 0;
 end
 
 always begin
@@ -35,14 +37,20 @@ initial begin
 end
 
 initial begin
-  #5 B1 = 1; B2 = 0;
+  #4 B1 = 1; B2 = 0;
   #10 B1 = 0; B2 = 1;
+  #2 B1 = 1; B2 = 0;
+  #8 B1 = 0; B2 = 1;
   #20 B1 = 1; B2 = 1;
   #20 B1 = 1; B2 = 0;
+  #20 B1 = 0; B2 = 0;
+  #10 B1 = 1; B2 = 1;
+  #10 B1 = 1; B2 = 0;
+  #10 B1 = 0; B2 = 1;
 end
 
 initial begin
-  #100 $finish;
+  #200 $finish;
 end
 
 endmodule

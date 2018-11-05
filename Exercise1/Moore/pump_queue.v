@@ -17,13 +17,12 @@ wire B1, B2, clk;
 reg use_pump;
 
 //Internal Constants
-
 parameter s_LP1 = 1'b0;
 parameter s_LP2 = 1'b1;
 
 //Internal Variables
 reg curr_state;
-wire next_state
+wire next_state;
 
 //Code
 assign next_state = fsm_function(curr_state,B1,B2);
@@ -51,7 +50,7 @@ function fsm_function;
 endfunction
 
 //Sequential Logic
-always @(posedge clk)
+always @(posedge clk or reset)
 begin: FSM_SEQ
     if(reset == 1'b1) begin
         curr_state <= #1 s_LP1;
@@ -61,7 +60,7 @@ begin: FSM_SEQ
 end
 
 //Output Logic
-always @(posedge clk)
+always @(posedge clk or reset)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
         use_pump <= #1 1'b0;
