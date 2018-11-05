@@ -14,19 +14,20 @@ output B1, B2;
 
 //Definición de Datos
     //Input Data Type
-wire B1, B2, clk reset;
+wire I, S, clk, reset;
     //Output DataType
 reg B1, B2;
 
 //Internal Variables
 reg [1:0] curr_state;
 reg [1:0] next_state;
+wire next_pump;
 
 //Internal Constants
-parameter FULL      2b'11;      //En este caso apago las 2 bombas
-parameter HALF      2b'01;      //En este caso prendo la ultima en no activarse
-parameter EMTPY     2b'00;      //En este caso prendo ambas bombas
-parameter HOW       2b'10;      //En este caso dejo las dos apagadas por seguridad
+parameter FULL  =   2'b11;      //En este caso apago las 2 bombas
+parameter HALF  =   2'b01;      //En este caso prendo la ultima en no activarse
+parameter EMTPY =   2'b00;      //En este caso prendo ambas bombas
+parameter HOW   =   2'b10;      //En este caso dejo las dos apagadas por seguridad
 
 //Code
 assign next_state = fsm_function(curr_state, B1, B2);
@@ -130,6 +131,7 @@ begin: OUTPUT_LOGIC
             HOW: begin
                 B1 <= #1 1'b0;
                 B2 <= #1 1'b0;
+                end
             default: begin
                 B1 <= #1 1'b0;
                 B2 <= #1 1'b0;
