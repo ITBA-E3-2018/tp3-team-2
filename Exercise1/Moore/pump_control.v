@@ -3,8 +3,13 @@ module pump_ctrl (
     S,          //Sensor Superior
     B1,         //Bomba 1
     B2,         //Bomba 2
-    clk         //Clock
+    clk,        //Clock
+    AP          //Armed Pump: Input from sub-FSM
     );
+
+//Definición I/O
+input I, S, clk, AP;
+output B1, B2;
 
 //Definición de las variables para los estados
 parameter FULL      2b'11;
