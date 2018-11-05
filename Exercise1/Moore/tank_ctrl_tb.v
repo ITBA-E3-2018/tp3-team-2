@@ -36,7 +36,7 @@ end
 
 initial begin
   $display("Clk \tI \tS \tB1 \tB2");
-  $monitor("%b\t%b\t%b\t%b\t%b\t%b",clk,I,S,B1,B2);
+  $monitor("%b\t%b\t%b\t%b\t%b",clk,I,S,B1,B2);
 end
 
 initial begin

@@ -20,7 +20,7 @@ reg B1, B2;
 
 //Internal Variables
 reg [1:0] curr_state;
-reg [1:0] next_state;
+wire [1:0] next_state;
 wire next_pump;
 
 //Internal Constants
@@ -30,63 +30,63 @@ parameter EMTPY =   2'b00;      //En este caso prendo ambas bombas
 parameter HOW   =   2'b10;      //En este caso dejo las dos apagadas por seguridad
 
 //Code
-assign next_state = fsm_function(curr_state, B1, B2);
+assign next_state = fsm_tank(curr_state, I, S);
 
 //Function Code
-function [1:0] fsm_function;
+function [1:0] fsm_tank;
     input [1:0] curr_state;
-    input B1;
-    input B2;
+    input I;
+    input S;
     case (curr_state)
         FULL: if(I == 1'b0 && S == 1'b0) begin
-                fsm_function = EMTPY;
+                fsm_tank = EMTPY;
                 end
                 else if (I == 1'b1 && S == 1'b0) begin
-                fsm_function = HALF;
+                fsm_tank = HALF;
                 end
                 else if (I == 1'b1 && S == 1'b1) begin
-                fsm_function = FULL;
+                fsm_tank = FULL;
                 end
                 else if (I == 1'b0 && S == 1'b1) begin
-                fsm_function = HOW;
+                fsm_tank = HOW;
                 end
         HALF: if(I == 1'b0 && S == 1'b0) begin
-                fsm_function = EMTPY;
+                fsm_tank = EMTPY;
                 end
                 else if (I == 1'b1 && S == 1'b0) begin
-                fsm_function = HALF;
+                fsm_tank = HALF;
                 end
                 else if (I == 1'b1 && S == 1'b1) begin
-                fsm_function = FULL;
+                fsm_tank = FULL;
                 end
                 else if (I == 1'b0 && S == 1'b1) begin
-                fsm_function = HOW;
+                fsm_tank = HOW;
                 end
         EMTPY: if(I == 1'b0 && S == 1'b0) begin
-                fsm_function = EMTPY;
+                fsm_tank = EMTPY;
                 end
                 else if (I == 1'b1 && S == 1'b0) begin
-                fsm_function = HALF;
+                fsm_tank = HALF;
                 end
                 else if (I == 1'b1 && S == 1'b1) begin
-                fsm_function = FULL;
+                fsm_tank = FULL;
                 end
                 else if (I == 1'b0 && S == 1'b1) begin
-                fsm_function = HOW;
+                fsm_tank = HOW;
                 end
         HOW: if(I == 1'b0 && S == 1'b0) begin
-                fsm_function = EMTPY;
+                fsm_tank = EMTPY;
                 end
                 else if (I == 1'b1 && S == 1'b0) begin
-                fsm_function = HALF;
+                fsm_tank = HALF;
                 end
                 else if (I == 1'b1 && S == 1'b1) begin
-                fsm_function = FULL;
+                fsm_tank = FULL;
                 end
                 else if (I == 1'b0 && S == 1'b1) begin
-                fsm_function = HOW;
+                fsm_tank = HOW;
                 end
-      default: fsm_function = FULL;
+      default: fsm_tank = FULL;
     endcase
 endfunction
 
@@ -104,7 +104,7 @@ end
 pump_ctrl pump(
     .B1(B1),
     .B2(B2),
-    .use_pump(),
+    .use_pump(next_pump),
     .clk(clk),
     .reset(reset)
 );
