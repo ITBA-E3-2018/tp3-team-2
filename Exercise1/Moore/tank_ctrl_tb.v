@@ -40,7 +40,20 @@ initial begin
 end
 
 initial begin
-  
+    I=0; S=0;
+    #10 I=1; S=0;
+    #10 I=0; S=0;
+    #10 I=1; S=0;
+    #10 I=0; S=0;
+    #10 I=1; S=0;
+    #10 I=1; S=1;
+    #10 I=1; S=0;
+    #10 I=1; S=1;
+    #10 I=1; S=0;
+    #10 I=0; S=0;
+    #10 I=1; S=0;
+    #30 I=1; S=1;
+    
 end
 
 initial begin
