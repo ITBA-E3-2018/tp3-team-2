@@ -1,10 +1,10 @@
-`include "./pump_queue.v"
+`include "./pump_ctrl.v"
 
-module pump_queue_tb ();
+module pump_ctrl_tb ();
 reg B1, B2, clk, reset;
 wire P;
 
-pump_queue test (
+pump_ctrl test_module (
     .B1(B1),
     .B2(B2),
     .use_pump(P),
@@ -27,7 +27,7 @@ always begin
 end
 
 initial begin
-  $dumpfile("queue.vcd");
+  $dumpfile("pump.vcd");
   $dumpvars;
 end
 

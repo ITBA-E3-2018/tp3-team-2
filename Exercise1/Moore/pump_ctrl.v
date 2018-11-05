@@ -1,4 +1,4 @@
-module pump_queue (
+module pump_ctrl (
     B1,      //Last Activated Pump was B1
     B2,      //Last Activated Pump was B2
     use_pump,   //Armed Pump
@@ -12,7 +12,7 @@ output use_pump;
 
 //Definición de Datos
     //Input Data Type
-wire B1, B2, clk;
+wire B1, B2, clk, reset;
     //Output Data Type
 reg use_pump;
 
@@ -49,7 +49,7 @@ function fsm_function;
     endcase
 endfunction
 
-//Sequential Logic
+//Sequential Logic (synchronous to clock)
 always @(posedge clk or reset)
 begin: FSM_SEQ
     if(reset == 1'b1) begin
@@ -59,15 +59,15 @@ begin: FSM_SEQ
     end
 end
 
-//Output Logic
-always @(posedge clk or reset)
+//Output Logic (not synchronous to clock)
+always @(*)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
         use_pump <= #1 1'b0;
     end else begin
         case (curr_state)
-            s_LP1: use_pump <= #1 1'b0;
-            s_LP2: use_pump <= #1 1'b1;
+            s_LP1: use_pump <= #1 1'b1;
+            s_LP2: use_pump <= #1 1'b0;
             default: use_pump <= #1 1'b0;
         endcase
     end
