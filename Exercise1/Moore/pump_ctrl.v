@@ -52,7 +52,7 @@ endfunction
 */
 
 //Code using always statements
-always @ (posedge B1, negedge B1, posedge B2, negedge B2)
+always @ (posedge clk)
 begin: FSM_COMBO
     next_state = s_LP1;
     case (curr_state)

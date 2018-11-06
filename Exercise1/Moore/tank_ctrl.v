@@ -20,9 +20,9 @@ reg B1, B2;
 
 //Internal Variables
 reg [1:0] curr_state;
-reg last_not_used_pump;
 wire [1:0] next_state;
-wire next_pump;
+reg last_used_pump;
+wire T;
 
 //Internal Constants
 parameter FULL  =   2'b11;      //En este caso apago las 2 bombas
@@ -100,22 +100,14 @@ begin: FSM_SEQ
         curr_state <= #1 next_state;
     end
 end
-/*
+
 //Output Logic (asynchronous to clock)
-pump_ctrl pump(
-    .B1(B1),
-    .B2(B2),
-    .use_pump(next_pump),
-    .clk(clk),
-    .reset(reset)
-);
-*/
 always @(*)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
         B1 <= #1 1'b0;
         B2 <= #1 1'b0;
-        last_not_used_pump <= #1 1'b0;
+        last_used_pump <= #1 1'b1;
     end else begin
         case (curr_state)
             FULL: begin 
@@ -127,15 +119,8 @@ begin: OUTPUT_LOGIC
                 B2 <= #1 1'b1;
                 end
             HALF: begin
-                if (last_not_used_pump == 1'b0) begin
-                    B1 <= #1 1'b1;
-                    B2 <= #1 1'b0;
-                    last_not_used_pump <= #1 1'b1;
-                end else if (last_not_used_pump == 1'b1) begin
-                    B1 <= #1 1'b0;
-                    B2 <= #1 1'b1;
-                    last_not_used_pump <= #1 1'b0;
-                end
+                B1 <= #1 !last_used_pump;
+                B2 <= #1 last_used_pump;
                 end
             HOW: begin
                 B1 <= #1 1'b0;
@@ -149,6 +134,11 @@ begin: OUTPUT_LOGIC
     end
 end
 
+and(T,curr_state[0],!curr_state[1]);
+always @(posedge T)
+begin
+    last_used_pump <= #1 !last_used_pump;
+end
 
 
 endmodule

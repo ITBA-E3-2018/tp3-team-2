@@ -22,7 +22,7 @@ initial begin
     I = 0;
     S = 0;
     reset = 1;
-    #1 reset = 0;
+    #5 reset = 0;
 end
 
 always begin
