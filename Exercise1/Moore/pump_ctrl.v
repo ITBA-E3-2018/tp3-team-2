@@ -22,9 +22,10 @@ parameter s_LP2 = 1'b1;
 
 //Internal Variables
 reg curr_state;
-wire next_state;
+reg next_state;
 
-//Code
+/*
+//Code using Function
 assign next_state = fsm_function(curr_state,B1,B2);
 
 //Function Code
@@ -48,6 +49,28 @@ function fsm_function;
       default: fsm_function = s_LP1;
     endcase
 endfunction
+*/
+
+//Code using always statements
+always @ (posedge B1, negedge B1, posedge B2, negedge B2)
+begin: FSM_COMBO
+    next_state = s_LP1;
+    case (curr_state)
+        s_LP1: if(B1 == 1'b0 && B2 == 1'b1) begin
+                next_state = s_LP2;
+                end
+                else begin
+                next_state = s_LP1;
+                end
+        s_LP2: if(B1 == 1'b1 && B2 == 1'b0) begin
+                next_state = s_LP1;
+                end
+                else begin
+                next_state = s_LP2;
+                end
+      default: next_state = s_LP1;
+    endcase
+end
 
 //Sequential Logic (synchronous to clock)
 always @(posedge clk or reset)

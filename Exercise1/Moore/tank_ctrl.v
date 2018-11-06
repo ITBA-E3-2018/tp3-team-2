@@ -20,6 +20,7 @@ reg B1, B2;
 
 //Internal Variables
 reg [1:0] curr_state;
+reg last_not_used_pump;
 wire [1:0] next_state;
 wire next_pump;
 
@@ -99,7 +100,7 @@ begin: FSM_SEQ
         curr_state <= #1 next_state;
     end
 end
-
+/*
 //Output Logic (asynchronous to clock)
 pump_ctrl pump(
     .B1(B1),
@@ -108,12 +109,13 @@ pump_ctrl pump(
     .clk(clk),
     .reset(reset)
 );
-
+*/
 always @(*)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
         B1 <= #1 1'b0;
         B2 <= #1 1'b0;
+        last_not_used_pump <= #1 1'b0;
     end else begin
         case (curr_state)
             FULL: begin 
@@ -125,8 +127,15 @@ begin: OUTPUT_LOGIC
                 B2 <= #1 1'b1;
                 end
             HALF: begin
-                B1 <= #1 !pump.use_pump;
-                B2 <= #1 pump.use_pump;
+                if (last_not_used_pump == 1'b0) begin
+                    B1 <= #1 1'b1;
+                    B2 <= #1 1'b0;
+                    last_not_used_pump <= #1 1'b1;
+                end else if (last_not_used_pump == 1'b1) begin
+                    B1 <= #1 1'b0;
+                    B2 <= #1 1'b1;
+                    last_not_used_pump <= #1 1'b0;
+                end
                 end
             HOW: begin
                 B1 <= #1 1'b0;
