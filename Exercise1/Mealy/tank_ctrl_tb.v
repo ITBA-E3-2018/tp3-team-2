@@ -52,8 +52,11 @@ initial begin
     #10 I=1; S=0;
     #10 I=0; S=0;
     #10 I=1; S=0;
-    #50 I=1; S=1;
+    #10 I=1; S=1;
     #10 I=0; S=1;
+    #20 I=1; S=0;
+    #10 I=1; S=1;
+    
 end
 
 initial begin
