@@ -101,6 +101,7 @@ begin: FSM_SEQ
     end
 end
 
+
 //Output Logic
 always @(*)
 begin: OUTPUT_LOGIC
@@ -129,7 +130,8 @@ begin: OUTPUT_LOGIC
     end
 end
 
-and(T,curr_state[0],!curr_state[1]);
+xor(T,curr_state[0],curr_state[1]);
+and(T,curr_state[0],T);
 always @(negedge T or reset)
 begin
     if (reset == 1'b1) begin
@@ -137,6 +139,5 @@ begin
     end
     use_pump <= #1 !use_pump;
 end
-
 
 endmodule
