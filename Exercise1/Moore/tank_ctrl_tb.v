@@ -1,28 +1,31 @@
 `include "./tank_ctrl.v"
+`include "./tank_ctrl2.v"
 
 module tank_ctrl_tb ();
 
 //Inputs
-reg I, S, clk, reset;
+reg I, S, clk, nReset;
 
 //Outputs
 wire B1,B2;
 
-tank_ctrl test_module (
+tank_ctrl2 test_module (
     .I(I),          //Sensor Inferior
     .S(S),          //Sensor Superior
     .B1(B1),        //Bomba 1
     .B2(B2),        //Bomba 2
     .clk(clk),      //Clock
-    .reset(reset)   //Reset
+    .nReset(nReset)   //Reset
 );
 
 initial begin
     clk = 0;
     I = 0;
     S = 0;
-    reset = 1;
-    #5 reset = 0;
+    nReset = 0;
+    #14 nReset = 1;
+    #30 nReset = 0;
+    #10 nReset = 1;
 end
 
 always begin
