@@ -21,7 +21,7 @@ reg B1, B2;
 reg [1:0] curr_state;
 wire [1:0] next_state;
 reg use_pump;
-wire T;
+wire T1,T2;
 
 //Internal Constants
 parameter FULL  =   2'b11;      //En este caso apago las 2 bombas
@@ -130,9 +130,9 @@ begin: OUTPUT_LOGIC
     end
 end
 
-xor(T,curr_state[0],curr_state[1]);
-and(T,curr_state[0],T);
-always @(negedge T or reset)
+xor(T1,curr_state[0],curr_state[1]);
+and(T2,curr_state[1],T1);
+always @(negedge T2 or reset)
 begin
     if (reset == 1'b1) begin
         use_pump <= #1 1'b1;
