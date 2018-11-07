@@ -1,0 +1,129 @@
+Added Component: Designator=AND0(DIP14)
+Add component. Clean all parameters for all variants
+Added Component: Designator=AND(DIP14)
+Add component. Clean all parameters for all variants
+Added Component: Designator=B1(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=B2(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=FFD(DIP16)
+Add component. Clean all parameters for all variants
+Added Component: Designator=I(TACTSWITCH)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J_Clk(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J_VCC(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J_Vin(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=OR(DIP14)
+Add component. Clean all parameters for all variants
+Added Component: Designator=RB1(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=RB2(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Reset(TACTSWITCH)
+Add component. Clean all parameters for all variants
+Added Component: Designator=RI(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rreset(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=RS(0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=S(TACTSWITCH)
+Add component. Clean all parameters for all variants
+Added Component: Designator=TOGGLE(DIP14)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=+VCC Pin=AND0-14
+Added Pin To Net: NetName=+VCC Pin=AND-14
+Added Pin To Net: NetName=+VCC Pin=FFD-16
+Added Pin To Net: NetName=+VCC Pin=J_VCC-1
+Added Pin To Net: NetName=+VCC Pin=OR-14
+Added Pin To Net: NetName=+VCC Pin=TOGGLE-14
+Added Net: Name=+VCC
+Added Pin To Net: NetName=a Pin=AND-1
+Added Pin To Net: NetName=a Pin=OR-3
+Added Net: Name=a
+Added Pin To Net: NetName=B1 Pin=AND-6
+Added Pin To Net: NetName=B1 Pin=B1-1
+Added Net: Name=B1
+Added Pin To Net: NetName=B2 Pin=AND-8
+Added Pin To Net: NetName=B2 Pin=B2-1
+Added Net: Name=B2
+Added Pin To Net: NetName=b Pin=AND-13
+Added Pin To Net: NetName=b Pin=OR-6
+Added Net: Name=b
+Added Pin To Net: NetName=Clk Pin=FFD-9
+Added Pin To Net: NetName=Clk Pin=J_Clk-1
+Added Net: Name=Clk
+Added Pin To Net: NetName=c Pin=AND-3
+Added Pin To Net: NetName=c Pin=AND-4
+Added Net: Name=c
+Added Pin To Net: NetName=d Pin=AND-10
+Added Pin To Net: NetName=d Pin=AND-11
+Added Net: Name=d
+Added Pin To Net: NetName=GND Pin=AND0-7
+Added Pin To Net: NetName=GND Pin=AND-7
+Added Pin To Net: NetName=GND Pin=FFD-8
+Added Pin To Net: NetName=GND Pin=J_Clk-2
+Added Pin To Net: NetName=GND Pin=J_VCC-2
+Added Pin To Net: NetName=GND Pin=J_Vin-2
+Added Pin To Net: NetName=GND Pin=OR-7
+Added Pin To Net: NetName=GND Pin=RB1-1
+Added Pin To Net: NetName=GND Pin=RB2-1
+Added Pin To Net: NetName=GND Pin=Reset-2
+Added Pin To Net: NetName=GND Pin=RI-1
+Added Pin To Net: NetName=GND Pin=RS-1
+Added Pin To Net: NetName=GND Pin=TOGGLE-7
+Added Net: Name=GND
+Added Pin To Net: NetName=HALF_Indicator Pin=AND0-3
+Added Pin To Net: NetName=HALF_Indicator Pin=TOGGLE-9
+Added Net: Name=HALF_Indicator
+Added Pin To Net: NetName=I Pin=FFD-4
+Added Pin To Net: NetName=I Pin=I-4
+Added Pin To Net: NetName=I Pin=RI-2
+Added Net: Name=I
+Added Pin To Net: NetName=NetB1_2 Pin=B1-2
+Added Pin To Net: NetName=NetB1_2 Pin=RB1-2
+Added Net: Name=NetB1_2
+Added Pin To Net: NetName=NetB2_2 Pin=B2-2
+Added Pin To Net: NetName=NetB2_2 Pin=RB2-2
+Added Net: Name=NetB2_2
+Added Pin To Net: NetName=nReset Pin=AND-5
+Added Pin To Net: NetName=nReset Pin=AND-9
+Added Pin To Net: NetName=nReset Pin=FFD-1
+Added Pin To Net: NetName=nReset Pin=Reset-4
+Added Pin To Net: NetName=nReset Pin=Rreset-2
+Added Pin To Net: NetName=nReset Pin=TOGGLE-10
+Added Net: Name=nReset
+Added Pin To Net: NetName=nUP Pin=OR-1
+Added Pin To Net: NetName=nUP Pin=TOGGLE-6
+Added Net: Name=nUP
+Added Pin To Net: NetName=ny0 Pin=FFD-3
+Added Pin To Net: NetName=ny0 Pin=OR-2
+Added Pin To Net: NetName=ny0 Pin=OR-5
+Added Net: Name=ny0
+Added Pin To Net: NetName=ny1 Pin=AND0-2
+Added Pin To Net: NetName=ny1 Pin=AND-2
+Added Pin To Net: NetName=ny1 Pin=AND-12
+Added Pin To Net: NetName=ny1 Pin=FFD-6
+Added Net: Name=ny1
+Added Pin To Net: NetName=S Pin=FFD-5
+Added Pin To Net: NetName=S Pin=RS-2
+Added Pin To Net: NetName=S Pin=S-4
+Added Net: Name=S
+Added Pin To Net: NetName=UP Pin=OR-4
+Added Pin To Net: NetName=UP Pin=TOGGLE-5
+Added Net: Name=UP
+Added Pin To Net: NetName=Vin Pin=I-2
+Added Pin To Net: NetName=Vin Pin=J_Vin-1
+Added Pin To Net: NetName=Vin Pin=Rreset-1
+Added Pin To Net: NetName=Vin Pin=S-2
+Added Pin To Net: NetName=Vin Pin=TOGGLE-8
+Added Pin To Net: NetName=Vin Pin=TOGGLE-11
+Added Net: Name=Vin
+Added Pin To Net: NetName=y0 Pin=AND0-1
+Added Pin To Net: NetName=y0 Pin=FFD-2
+Added Net: Name=y0
+Added Class: Name=tank_control
+Added Room: Name=tank_control
