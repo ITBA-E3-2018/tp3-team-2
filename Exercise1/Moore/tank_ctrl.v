@@ -106,6 +106,7 @@ begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
         B1 <= #1 1'b0;
         B2 <= #1 1'b0;
+        use_pump <= #1 1'b1;
     end else begin
         case (curr_state)
             FULL: begin 
@@ -138,7 +139,7 @@ begin
     if (reset == 1'b1) begin
         use_pump <= #1 1'b1;
     end
-    use_pump <= !use_pump;
+    use_pump <= #1 !use_pump;
 end
 
 
