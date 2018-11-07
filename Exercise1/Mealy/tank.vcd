@@ -1,0 +1,340 @@
+$date
+	Wed Nov  7 17:12:24 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tank_ctrl_tb $end
+$var wire 1 ! B1 $end
+$var wire 1 " B2 $end
+$var reg 1 # I $end
+$var reg 1 $ S $end
+$var reg 1 % clk $end
+$var reg 1 & reset $end
+$scope module test_module $end
+$var wire 1 ' I $end
+$var wire 1 ( S $end
+$var wire 1 ) T $end
+$var wire 1 * clk $end
+$var wire 2 + next_state [1:0] $end
+$var wire 1 , reset $end
+$var reg 1 - B1 $end
+$var reg 1 . B2 $end
+$var reg 2 / curr_state [1:0] $end
+$var reg 1 0 use_pump $end
+$scope function fsm_tank $end
+$var reg 1 1 I $end
+$var reg 1 2 S $end
+$var reg 2 3 curr_state [1:0] $end
+$var reg 2 4 fsm_tank [1:0] $end
+$upscope $end
+$scope begin FSM_SEQ $end
+$upscope $end
+$scope begin OUTPUT_LOGIC $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11 4
+bx 3
+02
+01
+x0
+bx /
+x.
+x-
+1,
+b11 +
+0*
+x)
+0(
+0'
+1&
+0%
+0$
+0#
+x"
+x!
+$end
+#1
+0)
+b0 +
+b0 4
+b11 3
+b11 /
+x0
+0.
+0"
+0-
+0!
+#2
+x0
+#3
+10
+#5
+1%
+1*
+0&
+0,
+#6
+b0 3
+00
+1.
+1"
+1-
+1!
+b0 /
+#10
+b10 +
+b10 4
+11
+0%
+0*
+1#
+1'
+#11
+0.
+0"
+#15
+1%
+1*
+#16
+b10 3
+b10 /
+#20
+b0 +
+b0 4
+01
+0%
+0*
+0#
+0'
+#21
+1.
+1"
+#25
+1%
+1*
+#26
+b0 3
+b0 /
+#30
+b10 +
+b10 4
+11
+0%
+0*
+1#
+1'
+#31
+0.
+0"
+#35
+1%
+1*
+#36
+b10 3
+b10 /
+#40
+b0 +
+b0 4
+01
+0%
+0*
+0#
+0'
+#41
+1.
+1"
+#45
+1%
+1*
+#46
+b0 3
+b0 /
+#50
+b10 +
+b10 4
+11
+0%
+0*
+1#
+1'
+#51
+0.
+0"
+#55
+1%
+1*
+#56
+b10 3
+b10 /
+#60
+b11 +
+b11 4
+12
+0%
+0*
+1$
+1(
+#61
+0-
+0!
+#65
+1%
+1*
+#66
+b11 3
+b11 /
+#70
+b10 +
+b10 4
+02
+0%
+0*
+0$
+0(
+#71
+1-
+1!
+#75
+1%
+1*
+#76
+b10 3
+b10 /
+#80
+b11 +
+b11 4
+12
+0%
+0*
+1$
+1(
+#81
+0-
+0!
+#85
+1%
+1*
+#86
+b11 3
+b11 /
+#90
+b10 +
+b10 4
+02
+0%
+0*
+0$
+0(
+#91
+1-
+1!
+#95
+1%
+1*
+#96
+b10 3
+b10 /
+#100
+b0 +
+b0 4
+01
+0%
+0*
+0#
+0'
+#101
+1.
+1"
+#105
+1%
+1*
+#106
+b0 3
+b0 /
+#110
+b10 +
+b10 4
+11
+0%
+0*
+1#
+1'
+#111
+0.
+0"
+#115
+1%
+1*
+#116
+b10 3
+b10 /
+#120
+0%
+0*
+#125
+1%
+1*
+#130
+0%
+0*
+#135
+1%
+1*
+#140
+0%
+0*
+#145
+1%
+1*
+#150
+0%
+0*
+#155
+1%
+1*
+#160
+b11 +
+b11 4
+12
+0%
+0*
+1$
+1(
+#161
+0-
+0!
+#165
+1%
+1*
+#166
+b11 3
+b11 /
+#170
+0%
+0*
+#175
+1%
+1*
+#180
+0%
+0*
+#185
+1%
+1*
+#190
+0%
+0*
+#195
+1%
+1*
+#200
+0%
+0*
