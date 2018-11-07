@@ -101,7 +101,7 @@ begin: FSM_SEQ
 end
 
 //Relevant internal wires to output
-wire nY0, nY1, nUP, a,b;
+wire nY0, nY1, nUP, a,b,c,d;
 
 //Output Logic (asynchronous to clock)
 not(nY0, curr_state[0]);
@@ -111,8 +111,11 @@ not(nUP, use_pump);
 or #(1) (a, nY0, nUP);
 or #(1) (b, nY0, use_pump);
 
-and #(1) (B1, !curr_state[1], a);
-and #(1) (B2, !curr_state[1], b);
+and #(1) (c, !curr_state[1], a);
+and #(1) (d, !curr_state[1], b);
+
+and #(1) (B1, nReset, c);
+and #(1) (B2, nReset, d);
 
 and #(1) (T,curr_state[0],!curr_state[1]);
 always @(negedge T or nReset)
