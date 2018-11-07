@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=y0 Pin=AND0-1
+Removed Pin From Net: NetName=ny1 Pin=AND0-2
+Change Component Footprint: Designator=Rreset Old Footprint=RES400 New Footprint=RES600
+Added Pin To Net: NetName=ny1 Pin=AND0-1
+Added Pin To Net: NetName=y0 Pin=AND0-2
+Added Room: Name=tank_control
