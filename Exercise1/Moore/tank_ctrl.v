@@ -20,7 +20,7 @@ reg B1, B2;
 //Internal Variables
 reg [1:0] curr_state;
 wire [1:0] next_state;
-reg last_used_pump;
+reg use_pump;
 wire T;
 
 //Internal Constants
@@ -94,10 +94,9 @@ endfunction
 always @(posedge clk or reset)
 begin: FSM_SEQ
     if(reset == 1'b1) begin
-        curr_state <= FULL;
-        last_used_pump <= 1'b1;
+        curr_state <= #1 FULL;
     end else begin
-        curr_state <= next_state;
+        curr_state <= #1 next_state;
     end
 end
 
@@ -105,39 +104,41 @@ end
 always @(*)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
-        B1 <= 1'b0;
-        B2 <= 1'b0;
-        last_used_pump <= 1'b1;
+        B1 <= #1 1'b0;
+        B2 <= #1 1'b0;
     end else begin
         case (curr_state)
             FULL: begin 
-                B1 <= 1'b0;
-                B2 <= 1'b0;
+                B1 <= #1 1'b0;
+                B2 <= #1 1'b0;
                 end
             EMTPY: begin
-                B1 <= 1'b1;
-                B2 <= 1'b1;
+                B1 <= #1 1'b1;
+                B2 <= #1 1'b1;
                 end
             HALF: begin
-                B1 <= !last_used_pump;
-                B2 <= last_used_pump;
+                B1 <= #1 !use_pump;
+                B2 <= #1 use_pump;
                 end
             HOW: begin
-                B1 <= 1'b0;
-                B2 <= 1'b0;
+                B1 <= #1 1'b0;
+                B2 <= #1 1'b0;
                 end
             default: begin
-                B1 <= 1'b0;
-                B2 <= 1'b0;
+                B1 <= #1 1'b0;
+                B2 <= #1 1'b0;
                 end
         endcase
     end
 end
 
 and(T,curr_state[0],!curr_state[1]);
-always @(posedge T)
+always @(negedge T or reset)
 begin
-    last_used_pump <= !last_used_pump;
+    if (reset == 1'b1) begin
+        use_pump <= #1 1'b1;
+    end
+    use_pump <= !use_pump;
 end
 
 
