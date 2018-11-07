@@ -1,21 +1,21 @@
-module tank_ctrl (
+module tank_ctrl2 (
     I,          //Sensor Inferior
     S,          //Sensor Superior
     B1,         //Bomba 1
     B2,         //Bomba 2
     clk,        //Clock
-    reset       //Reset
+    nReset       //Reset
     );
 
 //Definición I/O
-input I, S, clk, reset;
+input I, S, clk, nReset;
 output B1, B2;
 
 //Definición de Datos
     //Input Data Type
-wire I, S, clk, reset;
+wire I, S, clk, nReset;
     //Output DataType
-reg B1, B2;
+wire B1, B2;
 
 //Internal Variables
 reg [1:0] curr_state;
@@ -91,55 +91,37 @@ function [1:0] fsm_tank;
 endfunction
 
 //Sequential Logic
-always @(posedge clk or reset)
+always @(posedge clk or nReset)
 begin: FSM_SEQ
-    if(reset == 1'b1) begin
+    if(nReset == 1'b0) begin
         curr_state <= #1 EMPTY;
     end else begin
         curr_state <= #1 next_state;
     end
 end
 
-//Output Logic (asynchronous to clock)
-always @(*)
-begin: OUTPUT_LOGIC
-    if (reset == 1'b1) begin
-        B1 <= #1 1'b0;
-        B2 <= #1 1'b0;
-        use_pump <= #1 1'b1;
-    end else begin
-        case (curr_state)
-            FULL: begin 
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
-                end
-            EMPTY: begin
-                B1 <= #1 1'b1;
-                B2 <= #1 1'b1;
-                end
-            HALF: begin
-                B1 <= #1 !use_pump;
-                B2 <= #1 use_pump;
-                end
-            HOW: begin
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
-                end
-            default: begin
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
-                end
-        endcase
-    end
-end
+//Relevant internal wires to output
+wire nY0, nY1, nUP, a,b;
 
-and(T,curr_state[0],!curr_state[1]);
-always @(negedge T or reset)
+//Output Logic (asynchronous to clock)
+not(nY0, curr_state[0]);
+not(nY1, curr_state[1]);
+not(nUP, use_pump);
+
+or #(1) (a, nY0, nUP);
+or #(1) (b, nY0, use_pump);
+
+and #(1) (B1, !curr_state[1], a);
+and #(1) (B2, !curr_state[1], b);
+
+and #(1) (T,curr_state[0],!curr_state[1]);
+always @(negedge T or nReset)
 begin
-    if (reset == 1'b1) begin
-        use_pump <= #1 1'b1;
-    end
+    if (nReset == 1'b0) begin
+        use_pump <= #1 1'b0;
+    end else begin
     use_pump <= #1 !use_pump;
+    end
 end
 
 
