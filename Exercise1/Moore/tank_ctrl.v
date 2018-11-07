@@ -1,4 +1,3 @@
-`include "./pump_ctrl.v"
 module tank_ctrl (
     I,          //Sensor Inferior
     S,          //Sensor Superior
@@ -95,9 +94,10 @@ endfunction
 always @(posedge clk or reset)
 begin: FSM_SEQ
     if(reset == 1'b1) begin
-        curr_state <= #1 FULL;
+        curr_state <= FULL;
+        last_used_pump <= 1'b1;
     end else begin
-        curr_state <= #1 next_state;
+        curr_state <= next_state;
     end
 end
 
@@ -105,30 +105,30 @@ end
 always @(*)
 begin: OUTPUT_LOGIC
     if (reset == 1'b1) begin
-        B1 <= #1 1'b0;
-        B2 <= #1 1'b0;
-        last_used_pump <= #1 1'b1;
+        B1 <= 1'b0;
+        B2 <= 1'b0;
+        last_used_pump <= 1'b1;
     end else begin
         case (curr_state)
             FULL: begin 
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
+                B1 <= 1'b0;
+                B2 <= 1'b0;
                 end
             EMTPY: begin
-                B1 <= #1 1'b1;
-                B2 <= #1 1'b1;
+                B1 <= 1'b1;
+                B2 <= 1'b1;
                 end
             HALF: begin
-                B1 <= #1 !last_used_pump;
-                B2 <= #1 last_used_pump;
+                B1 <= !last_used_pump;
+                B2 <= last_used_pump;
                 end
             HOW: begin
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
+                B1 <= 1'b0;
+                B2 <= 1'b0;
                 end
             default: begin
-                B1 <= #1 1'b0;
-                B2 <= #1 1'b0;
+                B1 <= 1'b0;
+                B2 <= 1'b0;
                 end
         endcase
     end
@@ -137,7 +137,7 @@ end
 and(T,curr_state[0],!curr_state[1]);
 always @(posedge T)
 begin
-    last_used_pump <= #1 !last_used_pump;
+    last_used_pump <= !last_used_pump;
 end
 
 
