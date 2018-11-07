@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=RB1 Old Footprint=0805 New Footprint=RES400
+Change Component Footprint: Designator=RB2 Old Footprint=0805 New Footprint=RES400
+Change Component Footprint: Designator=RI Old Footprint=0805 New Footprint=RES400
+Change Component Footprint: Designator=RS Old Footprint=0805 New Footprint=RES400
+Change Component Footprint: Designator=Rreset Old Footprint=RES400 New Footprint=RES600
+Added Room: Name=tank_control
