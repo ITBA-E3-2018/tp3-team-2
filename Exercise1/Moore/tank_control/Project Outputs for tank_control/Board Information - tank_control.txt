@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : C:\Users\Victor\Documents\VSCode\tp3-team-2\Exercise1\Moore\tank_control\tank_control.PcbDoc
+Date         : 08-Nov-18
+Time         : 12:53:27 AM
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 65
+    Connections routed, 65
+    Connections remaining, 0
+count : 4
