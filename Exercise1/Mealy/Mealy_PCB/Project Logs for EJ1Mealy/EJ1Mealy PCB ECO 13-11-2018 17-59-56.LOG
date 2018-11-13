@@ -1,0 +1,9 @@
+Change Component Designator: OldDesignator=U5 NewDesignator=74HC107
+Added Pin To Net: NetName=Net74ALS08_1_2 Pin=74ALS08_1-2
+Added Pin To Net: NetName=W1 Pin=74LS32-1
+Added Pin To Net: NetName=Net74LS32_2 Pin=74LS32-2
+Added Pin To Net: NetName=Net74ALS08_1_2 Pin=74LS32-3
+Added Pin To Net: NetName=GND Pin=74LS32-7
+Added Pin To Net: NetName=VCC Pin=74LS32-14
+Added Pin To Net: NetName=Net74LS32_2 Pin=74LS74-5
+Added Room: Name=EJ1Mealy
