@@ -1809,5 +1809,17 @@ name "3_5"
 
 \end_layout
 
+\begin_layout Subsection
+Conclusions
+\end_layout
+
+\begin_layout Standard
+By analizing the behaviour of both circuits, how they behave in the same
+ test conditions, and comparing the amount of components used in both PCBs,
+ we conclude that in this case, the mealy implementation is more efficient
+ because it utilizes less components and realizes the same operation.
+ However, we need 
+\end_layout
+
 \end_body
 \end_document

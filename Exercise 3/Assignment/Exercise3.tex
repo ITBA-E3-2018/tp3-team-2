@@ -127,12 +127,12 @@ we have got the Moore machine.
 \subsection{Level Converter Implementation}
 
 To convert the voltage levels on the PCB for compatibility, we decided
-to use a 74LS05 Integrated Circuit. It is a inverter with Open-Collector
-outputs, that has a $V_{IH_{min}}=2(V)$, which is ideal for our implementation.
-By connecting the output to a pull-up network with the voltage we
-want, we can convert the level with no problems.
+to use 2N7000 Mosfet Transistor. We used it to implement an inverter
+with Open-Collector. By connecting the output to a pull-up network
+with the voltage we want, we can convert the level with no problems,
+form 5(v) to 3.3(v), and vice versa.
 
-For the Pull-Up network, we decided to use a resistor $R=10\,(k\Omega)$
+For the Pull-Up network, we decided to use a resistor $R=1\,(k\Omega)$
 so that when it's conected to ground, te current flowing through the
 inverter is less than $10\,(mA)$, and when the inverter produces
 a High Z, the resistor its not enough big to produce a High Z to the
@@ -155,9 +155,9 @@ and Bottom Layers are shown on Figure \ref{3_3}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.7]{images/TB}
+\includegraphics[scale=0.3]{images/TB}
 \par\end{centering}
-\caption{Top and Bottom Layers}
+\caption{Printed Board}
 \label{3_3}
 
 \end{figure}
@@ -188,47 +188,93 @@ State & W=0 & W=1\tabularnewline
 \end{tabular}
 \par\end{centering}
 \caption{Mealy State Machine}
+\label{3_t_4}
+\end{table}
 
+We can now easily see that in Table \ref{3_t_4}, states 01 and 10
+are equal, so we can simplify those states into only one state. The
+final Table is shown on Table \ref{3_t_5}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+State & W=0 & W=1\tabularnewline
+\hline 
+\hline 
+0 & 0/0 & 1/1\tabularnewline
+\hline 
+1 & 0/0 & 1/0\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Mealy Machine simplified}
+
+\label{3_t_5}
 \end{table}
 
 \begin{table}[H]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline 
-S1 & S0 & W & Output\tabularnewline
+State & W & Output\tabularnewline
 \hline 
 \hline 
-0 & 0 & 0 & 0\tabularnewline
+0 & 0 & 0\tabularnewline
 \hline 
-0 & 0 & 1 & 1\tabularnewline
+0 & 1 & 1\tabularnewline
 \hline 
-0 & 1 & 0 & 0\tabularnewline
+1 & 0 & 0\tabularnewline
 \hline 
-0 & 1 & 1 & 0\tabularnewline
-\hline 
-1 & 0 & 0 & 0\tabularnewline
-\hline 
-1 & 0 & 1 & 0\tabularnewline
-\hline 
-1 & 1 & 0 & x\tabularnewline
-\hline 
-1 & 1 & 1 & x\tabularnewline
+1 & 1 & 0\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
 \caption{Output Truth Table}
 
 \label{3_t_3}
-
 \end{table}
 
-So the formula for the output becomes:
+Finally, the formulas for the output and the next states are the following:
 
-\begin{equation}
-Output=\bar{S_{1}}\bar{S_{0}}w\label{eq:3_2}
-\end{equation}
+\[
+Output=\bar{St}.W
+\]
 
-By comparing the equations (\ref{eq:3_1}) and (\ref{eq:3_2}), we
-notice that in this case, Moore machine is more efficient because
-it utilizes less lotic gates as it needs one less variable to compare.
+\[
+State=W
+\]
+
+Implementing this would become someting like shown on Figure \ref{3_4}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.6]{images/Schematic2}
+\par\end{centering}
+\caption{Schematic Mealy Machine}
+\label{3_4}
+
+\end{figure}
+
+We builded this schematic in a breadboard, as shon on Figure \ref{3_5}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{images/mealy}
+\par\end{centering}
+\caption{Mealy Implementation}
+
+\label{3_5}
+
+\end{figure}
+
+\subsection{Conclusions}
+
+By analizing the behaviour of both circuits, how they behave in the
+same test conditions, and comparing the amount of components used
+in both PCBs, we conclude that in this case, Mealy's implementation
+is more efficient because it utilizes less components and realizes
+the same operation. However, we need to clarify that not always Mealy's
+implementation is more efficient than Moore's, this depends on each
+state machine to implement.
 \end{document}
