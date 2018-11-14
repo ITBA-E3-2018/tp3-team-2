@@ -15,7 +15,7 @@
 
 \subsection{\color{purple}Mealy State Machine}
 
-In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. This is to say the output could be represented as a function like $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, X: State and Q:Input event as could be visualize:
+In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. This is to say the output could be represented as a function like $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, Q: State and X:Input event as could be visualize:
 
  \begin{figure}[h!]
         \centering
@@ -42,7 +42,7 @@ Which is represented as follow:
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{State(Q)}}} & \multicolumn{8}{c|}{\textbf{Input(X)}} \\ \cline{4-11} 
-\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{\textbf{X1=0 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=0 X2=1}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=1}} \\ \hline
+\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{\textbf{I=0 S=0}} & \multicolumn{2}{c|}{\textbf{I=0 S=1}} & \multicolumn{2}{c|}{\textbf{I=1 S=0}} & \multicolumn{2}{c|}{\textbf{I=1 S=1}} \\ \hline
 \textbf{Representation} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} \\ \hline
 \textbf{Empty} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
 \textbf{Error} & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
@@ -63,7 +63,29 @@ So the logic circuit would be:
         \label{fig:ej1mealyld}
     \end{figure}
 
-We can notice that the input event and the output event are the same which could make the $Z_N=X_N$ with N: the output or input number, but as mention be in the Mealy state machine the output $Z=f(X_1.....X_n,Q_1....Q_n)$, so we considered essential the use of sate in the circuit is dependent with the state and the input. 
+We can notice that the input event and the output event are the same which could make the $Z_N=X_N$ with N: the output or input number, but as mention be in the Mealy state machine the output $Z=f(X_1.....X_n,Q_1....Q_n)$, so we considered essential the use of sate in the circuit is dependent with the state and the input to have a clear view of being a Mealy state machine.
+
+\subsubsection{\color{Orange}Simulation}
+
+For the simulation of this stage machine, as the pump B1 and B2 alternate their function when $I = 1 y S = 0$ and for the activation of the pump that depends on output voltage is needed the following circuit is added:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=1]{ej1mealycircuitplus.png}
+        \caption{\color{cyan}Exercise 1: Mealy additional logic circuit for the simulation}
+        \label{fig:ej1mealylp}
+    \end{figure}
+    
+Simulation the complete circuit in Verilog and testing the possibles values of input in Gtkwave the result was:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.7]{ej1mealysim1.png}\\
+        \vspace{0.2cm}
+        \includegraphics[scale=0.73]{ej1mealysim2.png}
+        \caption{\color{cyan}Exercise 1: Simulation results}
+        \label{fig:ej1mealyw}
+    \end{figure}
 
 \end{document}
 
