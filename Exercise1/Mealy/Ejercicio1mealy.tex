@@ -15,19 +15,55 @@
 
 \subsection{\color{purple}Mealy State Machine}
 
-In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. As a function it could be represented as $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, X: State and Q:Input event as could be visualize:
+In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. This is to say the output could be represented as a function like $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, X: State and Q:Input event as could be visualize:
 
  \begin{figure}[h!]
         \centering
         \includegraphics[scale=0.75]{Mealydiagram.png}
         \caption{\color{cyan}Mealy sate machine simple representation}
+        \label{fig:ej1mealyr}
+    \end{figure}
+
+In this exercise, two sensors I and S function as input event to the state machine. Analyzing the possible states and event we obtain the following Mealy machine diagram:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.65]{ej1mealy.png}
+        \caption{\color{cyan}Exercise 1: Mealy sate machine flow chart}
         \label{fig:ej1mealyd}
     \end{figure}
 
+Which is represented as follow:
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{State(Q)}}} & \multicolumn{8}{c|}{\textbf{Input(X)}} \\ \cline{4-11} 
+\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{\textbf{X1=0 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=0 X2=1}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=1}} \\ \hline
+\textbf{Representation} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} \\ \hline
+\textbf{Empty} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Error} & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Half} & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Full} & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Output(Z)} & \textbf{Z1} & \textbf{Z2} & \textbf{0} & \textbf{0} & \textbf{1} & \textbf{1} & \textbf{1} & \textbf{0} & \textbf{1} & \textbf{1} \\ \hline
+\end{tabular}
+\caption{\color{cyan}Exercise 1: Mealy sate machine}
+\end{table}
 
+\pagebreak
+So the logic circuit would be:
 
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=1]{ej1mealycircuit.png}
+        \caption{\color{cyan}Exercise 1: Mealy logic circuit}
+        \label{fig:ej1mealyld}
+    \end{figure}
 
+We can notice that the input event and the output event are the same which could make the $Z_N=X_N$ with N: the output or input number, but as mention be in the Mealy state machine the output $Z=f(X_1.....X_n,Q_1....Q_n)$, so we considered essential the use of sate in the circuit is dependent with the state and the input. 
 
 \end{document}
 
