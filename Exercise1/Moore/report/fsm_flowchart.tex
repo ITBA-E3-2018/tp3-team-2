@@ -1,0 +1,18 @@
+\begin{tikzpicture}[node distance = 5cm, auto]
+    %place nodes
+    \node [block] (empty) {Empty B1:On B2:On};
+    \node [decision, below of = empty] (toggle) {Last Not Activated Pump};
+    \node [block, left of = toggle]  (only_one) {Half Full: B1:On B2:Off LnA=B2};
+    \node [block, right of = toggle] (only_two) {Half Full: B1:Off B2:On LnA=B1};
+    \node [block, below of = toggle] (full) {Full: B1:Off B2:Off};
+    %place lines
+    \path [line] (empty) -- node [near start] {I=1,S=0} (toggle);
+    \path [line] (toggle) -- node [near start] {B1} (only_one);
+    \path [line] (toggle) -- node [near start] {B2} (only_two);
+    \path [line] (full) -- node [near start] {I=1,S=0} (toggle);
+    \path [line] (only_one) |- node [near start] {I=1,S=1} (full);
+    \path [line] (only_two) |- node [near start] {I=1,S=1} (full);
+    \path [line] (only_one) |- node [near start] {I=0,S=0} (empty);
+    \path [line] (only_two) |- node [near start] {I=0,S=0} (empty);
+
+\end{tikzpicture}

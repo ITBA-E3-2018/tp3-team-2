@@ -1,0 +1,26 @@
+\section{Moore's Finite State Machine}
+
+Moore's Finite State Machine (FSM) follows a model where the next state of the machine is determined by the current
+inputs and its current state, while the output is determined by the current state of the machine, following the
+designed combinational logic.
+
+\subsection{Design}
+
+Given the specifications required of the pump controller, the functionality of the fsm was represented
+on Figure \ref{fig:moore_flow} and on Table \ref{fig:moore_table}, where "LnA" stands for "Last not Activated".
+
+\begin{figure}[h]
+    \begin{center}
+        \input{fsm_flowchart.tex}
+        \caption{Flow Diagram for Moore's Machine}
+        \label{fig:moore_flow}
+    \end{center}
+\end{figure}
+
+\begin{table}[ht]
+    \begin{center}
+        \input{fsm_table.tex}
+        \caption{State Transition Table}
+        \label{fig:moore_table}
+    \end{center}
+\end{table}
