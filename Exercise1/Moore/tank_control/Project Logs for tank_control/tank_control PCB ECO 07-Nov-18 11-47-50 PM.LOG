@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=B1 Pin=AND-6
+Removed Pin From Net: NetName=B2 Pin=AND-8
+Removed Pin From Net: NetName=nUP Pin=OR-1
+Removed Pin From Net: NetName=UP Pin=OR-13
+Added Pin To Net: NetName=B2 Pin=AND-6
+Added Pin To Net: NetName=B1 Pin=AND-8
+Added Pin To Net: NetName=UP Pin=OR-1
+Added Pin To Net: NetName=nUP Pin=OR-13
+Change Net Name : Old Net Name=a New Net Name=b
+Change Net Name : Old Net Name=b New Net Name=a
+Change Net Name : Old Net Name=c New Net Name=d
+Change Net Name : Old Net Name=d New Net Name=c
+Added Room: Name=tank_control

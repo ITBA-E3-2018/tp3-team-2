@@ -1,0 +1,29 @@
+Net Status Report
+Filename     : C:\Users\Victor\Documents\VSCode\tp3-team-2\Exercise1\Moore\tank_control\tank_control.PcbDoc
+Date         : 08-Nov-18
+Time         : 12:52:54 AM
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    +VCC, Signal Layers Only, 172.6224mm
+    B1, Signal Layers Only, 12.9326mm
+    B2, Signal Layers Only, 8.647mm
+    Clk, Signal Layers Only, 3.2394mm
+    GND, Signal Layers Only, 320.4463mm
+    HALF_Indicator, Signal Layers Only, 31.9937mm
+    I, Signal Layers Only, 33.9892mm
+    NetB1_2, Signal Layers Only, 7.5573mm
+    NetB2_2, Signal Layers Only, 7.6573mm
+    S, Signal Layers Only, 29.7801mm
+    UP, Signal Layers Only, 41.8315mm
+    Vin, Signal Layers Only, 113.9533mm
+    a, Signal Layers Only, 24.1884mm
+    b, Signal Layers Only, 25.9167mm
+    c, Signal Layers Only, 2.54mm
+    d, Signal Layers Only, 2.54mm
+    nReset, Signal Layers Only, 128.4321mm
+    nUP, Signal Layers Only, 33.9176mm
+    ny0, Signal Layers Only, 85.3337mm
+    ny1, Signal Layers Only, 90.5564mm
+    y0, Signal Layers Only, 30.214mm
+count : 21

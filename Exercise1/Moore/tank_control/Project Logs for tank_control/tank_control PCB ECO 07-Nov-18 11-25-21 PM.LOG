@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=nUP Pin=OR-4
+Removed Pin From Net: NetName=ny0 Pin=OR-5
+Removed Pin From Net: NetName=a Pin=OR-6
+Added Pin To Net: NetName=a Pin=OR-11
+Added Pin To Net: NetName=ny0 Pin=OR-12
+Added Pin To Net: NetName=nUP Pin=OR-13
+Added Member To Class: ClassName=tank_control Member=Component OR 74HC32
+Added Room: Name=tank_control

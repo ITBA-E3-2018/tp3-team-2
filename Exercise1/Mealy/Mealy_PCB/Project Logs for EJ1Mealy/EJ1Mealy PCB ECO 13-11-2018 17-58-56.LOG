@@ -1,0 +1,37 @@
+Removed Pin From Net: NetName=W1 Pin=U1-1
+Removed Pin From Net: NetName=NetU1_2 Pin=U1-2
+Removed Pin From Net: NetName=NetU1_3 Pin=U1-3
+Removed Pin From Net: NetName=NetU1_3 Pin=U2-2
+Removed Pin From Net: NetName=NetU1_2 Pin=U3-5
+Change Component Designator: OldDesignator=U1 NewDesignator=74ALS32
+Change Component Designator: OldDesignator=U2 NewDesignator=74ALS08_1
+Change Component Designator: OldDesignator=U3 NewDesignator=74LS74
+Change Component Designator: OldDesignator=U4 NewDesignator=74ALS86
+Change Component Designator: OldDesignator=U6 NewDesignator=74ALS08_2
+Change Component Designator: OldDesignator=U7 NewDesignator=74ALS02
+Added Component: Designator=74LS32(N014)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/sn74als32.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Packaging Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://focus.ti.com/lit/ml/mpdi002c/mpdi002c.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Dec-1994"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 14 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Oct-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetU1_2 New Net Name=Net74ALS08_1_2
+Change Net Name : Old Net Name=NetU1_3 New Net Name=Net74LS32_2
+Change Net Name : Old Net Name=NetU1_5 New Net Name=Net74ALS32_5
+Change Net Name : Old Net Name=NetU1_6 New Net Name=Net74ALS08_1_5
+Change Net Name : Old Net Name=NetU2_8 New Net Name=Net74ALS08_1_8
+Change Net Name : Old Net Name=NetU2_10 New Net Name=Net74ALS08_1_10
+Change Net Name : Old Net Name=NetU2_13 New Net Name=Net74ALS08_1_13
+Change Net Name : Old Net Name=NetU5_2 New Net Name=Net74ALS08_2_1
+Added Member To Class: ClassName=EJ1Mealy Member=Component 74LS32 SN74ALS32N
+Added Room: Name=EJ1Mealy

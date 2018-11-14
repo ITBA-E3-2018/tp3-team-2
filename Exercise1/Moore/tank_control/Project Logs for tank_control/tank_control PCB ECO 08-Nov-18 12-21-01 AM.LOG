@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=Reset-2
+Removed Pin From Net: NetName=nReset Pin=Reset-4
+Added Pin To Net: NetName=nReset Pin=Reset-2
+Added Pin To Net: NetName=GND Pin=Reset-4

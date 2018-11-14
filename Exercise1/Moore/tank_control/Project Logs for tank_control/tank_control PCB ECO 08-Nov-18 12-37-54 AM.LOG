@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=nReset Pin=Reset-1
+Removed Pin From Net: NetName=GND Pin=Reset-3
+Removed Pin From Net: NetName=Vin Pin=Rreset?-1
+Removed Pin From Net: NetName=nReset Pin=Rreset?-2
+Removed Member From Class: ClassName=tank_control Member=Rreset?
+Added Component: Designator=Rreset(RES400)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=nReset Pin=Reset-2
+Added Pin To Net: NetName=GND Pin=Reset-4
+Added Pin To Net: NetName=Vin Pin=Rreset-1
+Added Pin To Net: NetName=nReset Pin=Rreset-2
+Added Member To Class: ClassName=tank_control Member=Component Rreset 10k

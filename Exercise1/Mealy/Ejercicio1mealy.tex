@@ -1,0 +1,256 @@
+\input{./preamble.tex}
+
+\begin{document}
+
+%\input{caratula.tex}
+%
+%\pagenumbering{roman}
+%\tableofcontents
+%\newpage
+%\pagenumbering{arabic}
+%
+%Test Text
+
+\section{\color{olive}Exercise 1: }
+
+\subsection{\color{purple}Mealy State Machine}
+
+In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. This is to say the output could be represented as a function like $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, X: State and Q:Input event as could be visualize:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.75]{Mealydiagram.png}
+        \caption{\color{cyan}Mealy sate machine simple representation}
+        \label{fig:ej1mealyr}
+    \end{figure}
+
+In this exercise, two sensors I and S function as input event to the state machine. Analyzing the possible states and event we obtain the following Mealy machine diagram:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.65]{ej1mealy.png}
+        \caption{\color{cyan}Exercise 1: Mealy sate machine flow chart}
+        \label{fig:ej1mealyd}
+    \end{figure}
+
+Which is represented as follow:
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{State(Q)}}} & \multicolumn{8}{c|}{\textbf{Input(X)}} \\ \cline{4-11} 
+\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{\textbf{X1=0 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=0 X2=1}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=0}} & \multicolumn{2}{c|}{\textbf{X1=1 X2=1}} \\ \hline
+\textbf{Representation} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} & \textbf{Q2} & \textbf{Q1} \\ \hline
+\textbf{Empty} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Error} & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Half} & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Full} & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+\textbf{Output(Z)} & \textbf{Z1} & \textbf{Z2} & \textbf{0} & \textbf{0} & \textbf{1} & \textbf{1} & \textbf{1} & \textbf{0} & \textbf{1} & \textbf{1} \\ \hline
+\end{tabular}
+\caption{\color{cyan}Exercise 1: Mealy sate machine}
+\end{table}
+
+\pagebreak
+So the logic circuit would be:
+
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=1]{ej1mealycircuit.png}
+        \caption{\color{cyan}Exercise 1: Mealy logic circuit}
+        \label{fig:ej1mealyld}
+    \end{figure}
+
+We can notice that the input event and the output event are the same which could make the $Z_N=X_N$ with N: the output or input number, but as mention be in the Mealy state machine the output $Z=f(X_1.....X_n,Q_1....Q_n)$, so we considered essential the use of sate in the circuit is dependent with the state and the input. 
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%Having three different technology integrated circuits, 74HC02, 74HCT02 and 74LS02, we compare the noise margin between them and analyze the possible results when loading them with each other us follow:
+%
+% \begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.65]{circuit2.png}
+%        \caption{\color{cyan}Logical circuit}
+%        \label{fig:ej2circuit}
+%    \end{figure}
+%
+%-Input(V): Input voltage; 
+%-$X$: First component name; 
+%-$Y$: Second component name; 
+%-$q$: First result voltage; \\
+%-$Q$: Final result
+%
+%	\subsection{\color{purple}Theoretically}
+%	
+%	 From the data-sheet of the components we obtain the following data when the power supply is $4.5V$ in the 74HC02 and 74HCT02 and around $5V$ for 74LS02:
+%	 
+%	 \begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.5]{dataaa2.png}
+%        \caption{\color{cyan}Theoretical Noise Margin in Input and Output}
+%        \label{fig:ej2thnm}
+%    \end{figure}
+%    
+%    Within the mentioned values of power supply, the fanout of the components were: 74HC02 and 74HCT02 are 20, with $I_l =\pm1{\mu}A$ and $I_o=-20{\mu}A$; and 74LS02 is 80, with $I_l =0.1mA$ and $I_o=8mA$. As we load the components together, to avoid hurting the circuit, the maximum fanout allow shall be the minimum of the components, this is to say 20 in this case when we load HC with LS or HCT with LS. 
+%    
+%    Connecting the circuit like the figure \ref{fig:ej2cir} being $X$ the second column and $Y$ the forth column, analyzing the possible results would be:
+%
+%	\begin{center}
+%	\hspace{2cm}\begin{table}[h!]
+%	\begin{tabular}{llllllllllllllllllll} 
+%	\cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{Input(V)}}                                & \multicolumn{2}{c|}{74HC02}                                                       & \multicolumn{1}{c|}{\multirow{2}{*}{q}}          & \multicolumn{2}{c|}{74LS02}                                          & \multicolumn{1}{c|}{\multirow{2}{*}{Q}}             \\ \cline{2-3} \cline{5-6}
+%	\multicolumn{1}{|c|}{}                                                 & \multicolumn{1}{c|}{Logic Input}        & \multicolumn{1}{c|}{Logic Output}       & \multicolumn{1}{c|}{}                            & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{}                               \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{0\textless{}V\textless{}1.35}                     & \multicolumn{1}{c|}{0}                  & \multicolumn{1}{c|}{1}                  & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5} & \multicolumn{1}{c|}{1}           & \multicolumn{1}{c|}{0}            & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5}    \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{3}{*}{1.35\textless{}V\textless{}3.15}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.8} & \multicolumn{1}{c|}{0}           & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2.7\textless{}V\textless{}5}    \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{}                                                 & \multicolumn{1}{c|}{}                   & \multicolumn{1}{c|}{}                   & \multicolumn{1}{c|}{0.8\textless{}V\textless{}2} & \multicolumn{1}{c|}{?}           & \multicolumn{1}{c|}{?}            & \multicolumn{1}{c|}{0.5\textless{}V\textless{}2.7}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{}                                                 & \multicolumn{1}{c|}{}                   & \multicolumn{1}{c|}{}                   & \multicolumn{1}{c|}{2\textless{}V\textless{}4.4} & \multicolumn{1}{c|}{1}           & \multicolumn{1}{c|}{0}            & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5}    \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{3.15\textless{}V\textless{}5}                     & \multicolumn{1}{c|}{1}                  & \multicolumn{1}{c|}{0}                  & \multicolumn{1}{c|}{0\textless{}V\textless{}0.1} & \multicolumn{1}{c|}{0}           & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2.7\textless{}V\textless{}5}\\ \cline{1-7}
+%	\end{tabular}
+%	\caption{\color{cyan}74HC02 load to 74LS02}
+%	\label{fig:ej2thhctols}
+%	\end{table}
+%	\end{center}
+%	
+%	\begin{center}
+%	\hspace{1cm}\begin{table}[h!]
+%	\begin{tabular}{llllllllllllllllllll}
+%	\cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{Input(V)}} & \multicolumn{2}{c|}{74LS02} & \multicolumn{1}{c|}{\multirow{2}{*}{q}} & \multicolumn{2}{c|}{74HC02} & \multicolumn{1}{c|}{\multirow{2}{*}{Q}}  \\ \cline{2-3} \cline{5-6}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{0\textless{}V\textless{}0.8}} & \multicolumn{1}{c|}{\multirow{2}{*}{0}} & \multicolumn{1}{c|}{\multirow{2}{*}{1}} & \multicolumn{1}{c|}{2.7\textless{}V\textless{}3.15} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{0.1\textless{}V\textless{}4.4}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{3.15\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.1}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{0.8\textless{}V\textless{}2}} & \multicolumn{1}{c|}{\multirow{2}{*}{?}} & \multicolumn{1}{c|}{\multirow{2}{*}{?}} & \multicolumn{1}{c|}{0.5\textless{}V\textless{}1.35} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{1.35\textless{}V\textless{}2.7} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{0.1\textless{}V\textless{}4.4}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{2\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5}\\ \cline{1-7}
+%	\end{tabular}
+%	\caption{\color{cyan}74LS02 load to 74HC02}
+%	\label{fig:ej2thlstohc}
+%	\end{table}
+%	\end{center}
+%	
+%	\begin{center}
+%	\hspace{1cm}\begin{table}[h!]
+%	\begin{tabular}{llllllllllllllllllll}
+%	\cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{Input(V)}} & \multicolumn{2}{c|}{74LS02} & \multicolumn{1}{c|}{\multirow{2}{*}{q}} & \multicolumn{2}{c|}{74HCT02} & \multicolumn{1}{c|}{\multirow{2}{*}{Q}}  \\ \cline{2-3} \cline{5-6}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{0\textless{}V\textless{}0.8} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2.7\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{3}{*}{0.8\textless{}V\textless{}2}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{0.5\textless{}V\textless{}0.8} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{0.8\textless{}V\textless{}2} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{0.1\textless{}V\textless{}4.4}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{2\textless{}V\textless{}2.7} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.1}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{2\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5}\\ \cline{1-7}
+%	\end{tabular}
+%	\caption{\color{cyan}74LS02 load to 74HCT02}
+%	\label{fig:ej2thlstohct}
+%	\end{table}
+%	\end{center}
+%	
+%	\begin{center}
+%	\hspace{1cm}\begin{table}[h!]
+%	\begin{tabular}{llllllllllllllllllll}
+%	\cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{2}{*}{Input(V)}} & \multicolumn{2}{c|}{74HCT02} & \multicolumn{1}{c|}{\multirow{2}{*}{q}} & \multicolumn{2}{c|}{74LS02} & \multicolumn{1}{c|}{\multirow{2}{*}{Q}}  \\ \cline{2-3} \cline{5-6}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{Logic Input} & \multicolumn{1}{c|}{Logic Output} & \multicolumn{1}{c|}{}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{0\textless{}V\textless{}0.8} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{4.4\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{\multirow{3}{*}{0.8\textless{}V\textless{}2}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{\multirow{3}{*}{?}} & \multicolumn{1}{c|}{0.1\textless{}V\textless{}0.8} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2.7\textless{}V\textless{}5}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{0.8\textless{}V\textless{}2} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{?} & \multicolumn{1}{c|}{0.5\textless{}V\textless{}2.7}  \\ \cline{4-7}
+%	\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{2\textless{}V\textless{}4.4} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.5}  \\ \cline{1-7}
+%	\multicolumn{1}{|c|}{2\textless{}V\textless{}5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0\textless{}V\textless{}0.1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2.7\textless{}V\textless{}5}\\ \cline{1-7}
+%	\end{tabular}
+%	\caption{\color{cyan}74HCT02 load to 74LS02}
+%	\label{fig:ej2thhcttols}
+%	\end{table}
+%	\end{center}
+%	
+%	\pagebreak
+%	
+%	Therefore we expect when loading the components there will be are some irregularities in the Q output value when the input value aren't the recommended in the data-sheet. 
+%
+%	\subsection{\color{purple}Experimentally}
+%	
+%	Building the circuit in the figure \ref{fig:ej2cir} with the power supply to the integrated circuits equal to 5V with a square signal, altering its maximum value. The measured result were:
+%	
+%	\begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.19]{HC-LS-5V.png}\hspace{1cm}
+%%        \includegraphics[scale=0.19]{HC-LS-2V.png}\\
+%        \includegraphics[scale=0.19]{HC-LS-3V.png}\\
+%		\vspace{0.2cm}
+%%		\hspace{0.9cm}
+%	   \includegraphics[scale=0.19]{HC-LS-2V.png}\hspace{1cm} 
+%        \includegraphics[scale=0.19]{HC-LS-2p3V.png}
+%        \caption{\color{cyan}74HC02 load to 74LS02}
+%        \label{fig:ej2exhctols}
+%    \end{figure}
+%    
+%    \begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.19]{LS-HC-5V.png}\hspace{1cm}
+%        \includegraphics[scale=0.19]{LS-HC-3V.png}\\
+%		\vspace{0.2cm}
+%%		\hspace{0cm}
+%        \includegraphics[scale=0.19]{LS-HC-1p5V.png}\hspace{1cm}
+%         \includegraphics[scale=0.19]{LS-HC-0p7V.png}\\
+%        \vspace{0.2cm}
+%%		\hspace{0.9cm}
+%        \includegraphics[scale=0.19]{LS-HC-1V.png}
+%        \caption{\color{cyan}74LS02 load to 74HC02}
+%        \label{fig:ej2exlstohc}
+%    \end{figure}
+%    
+%%    \pagebreak
+%    \begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.19]{LS-HCT-5V.png}\hspace{1cm}
+%        \includegraphics[scale=0.19]{LS-HCT-3V.png}\\
+%		\vspace{0.2cm}
+%%		\hspace{0cm}
+%        \includegraphics[scale=0.19]{LS-HCT-1p5V.png}\hspace{1cm}
+%        \includegraphics[scale=0.19]{LS-HCT-0p7V.png}\\
+%        \vspace{0.2cm}
+%%		\hspace{0.9cm}
+%        \includegraphics[scale=0.19]{LS-HCT-1p1V.png}
+%        \caption{\color{cyan}74LS02 load to 74HCT02}
+%        \label{fig:ej2exlstohct}
+%    \end{figure}
+%
+%    \begin{figure}[h!]
+%        \centering
+%        \includegraphics[scale=0.18]{HCT-LS-5V.png}\hspace{1cm}
+%        \includegraphics[scale=0.18]{HCT-LS-3V.png}\\
+%		\vspace{0.2cm}
+%%		\hspace{0.9cm}
+%	   \includegraphics[scale=0.18]{HCT-LS-1p8V.png}\hspace{1cm}
+%	   \includegraphics[scale=0.18]{HCT-LS-1V.png}\\
+%	   \vspace{0.2cm}
+%%		\hspace{0cm}
+%%        \hspace{1cm}
+%        \includegraphics[scale=0.18]{HCT-LS-0p6V.png}\hspace{1cm}
+%        \includegraphics[scale=0.18]{LS-HCT-1p1V.png}
+%        \caption{\color{cyan}74HCT02 load to 74LS02}
+%        \label{fig:ej2exhcttols}
+%    \end{figure}
+%    
+%    \pagebreak
+%
+%	Analyzing the results in $Q$ it is clear that the irregularities are odd to find, this could be because the manufacturer always leaves a bigger margin to ovoid conflicts within each unique component. Moreover as mention in the theoretical table when the input voltage isn't a logical input, in other words the supply voltage is in the prohibited zone because the circuit cannot decide if the the value of the voltage is low or high, the output value $q$ could mean something in the second component leading to misunderstandings or errors in the logical function. In the other hand, we can notice that using the HCT with the LS integrated circuits, their irregularity is lower in amplitude and not so define as HC with LS, cause their input noise margin are similar. 
+%
+%\end{document}

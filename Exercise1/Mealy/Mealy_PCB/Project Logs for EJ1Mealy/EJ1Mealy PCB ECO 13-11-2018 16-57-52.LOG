@@ -1,0 +1,37 @@
+Removed Pin From Net: NetName=Z1 Pin=U4-1
+Removed Pin From Net: NetName=Z2 Pin=U4-2
+Removed Pin From Net: NetName=GND Pin=U4-7
+Removed Pin From Net: NetName=VCC Pin=U4-14
+Removed Member From Class: ClassName=EJ1Mealy Member=U4
+Added Component: Designator=U?(N014)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/sn54als86.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Packaging Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://focus.ti.com/lit/ml/mpdi002c/mpdi002c.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Dec-1994"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 14 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Oct-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Z1 Pin=U?-1
+Added Pin To Net: NetName=Z2 Pin=U?-2
+Added Pin To Net: NetName=GND Pin=U?-7
+Added Pin To Net: NetName=VCC Pin=U?-14
+Added Pin To Net: NetName=NetU?_3 Pin=U?-3
+Added Pin To Net: NetName=NetU?_3 Pin=U?-10
+Added Net: Name=NetU?_3
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS08N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS08N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS02AN
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS08N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS32N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS86N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS08N
+Added Member To Class: ClassName=EJ1Mealy Member=Component U? SN74ALS32N
+Added Room: Name=EJ1Mealy
