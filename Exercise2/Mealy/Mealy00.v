@@ -10,7 +10,7 @@ module Mealy00  (Clock, Resetn, w, z);
     //Defines the next state combinational circuit
     always @(w,y)
         case(y)
-            A:if(w) begin
+            A: if(w) begin
                 z=0;
                 Y=B;
             end
@@ -18,14 +18,15 @@ module Mealy00  (Clock, Resetn, w, z);
                 z=0;
                 Y=A;
             end
-            B:if(w) begin
+            B: if(w) begin
                 z=0;
                 Y=C;
             end
             else begin
                 z=0;
                 Y=A;
-            C:if(w) begin
+            end
+            C: if(w) begin
                 z=0;
                 Y=C;
             end
@@ -33,7 +34,7 @@ module Mealy00  (Clock, Resetn, w, z);
                 z=0;
                 Y=D;
             end
-            D:if(w) begin
+            D: if(w) begin
                 z=1;
                 Y=E;
             end
@@ -49,7 +50,7 @@ module Mealy00  (Clock, Resetn, w, z);
                 z=0;
                 Y=A;
             end
-            default begin
+            default: begin
                 z=0;
                 Y=3'bxxx;
             end

@@ -1,3 +1,4 @@
+//`timescale 1ms / 100us
 `timescale 100us / 100us
 
 module Mealy00Tester ();
@@ -7,7 +8,7 @@ reg resetn, in;            //VER SI ESTA BIEN!!!!!!!!!!
 reg [64:1] sequence;
 integer i;
 Clock_gen myClock(clk);
-Moore00 myMoore (clk,resetn,in,out);
+Mealy00 myMealy (clk,resetn,in,out);
 
 initial in=0;
 initial i=0;
@@ -29,12 +30,12 @@ end
 
 //Para poder usar gtkwave:
   reg dummy;
-  reg[8*64:0] dumpfile_path = "mealy4gtkwave.vcd";
+  reg[8*64:0] dumpfile_path = "output.vcd";
 
   initial begin
     dummy = $value$plusargs("VCD_PATH=%s", dumpfile_path);
     $dumpfile(dumpfile_path);
     $dumpvars(0,Mealy00Tester);
   end
-
+  
 endmodule
