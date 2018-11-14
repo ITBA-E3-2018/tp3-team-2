@@ -1,7 +1,7 @@
 module Mealy00  (Clock, Resetn, w, z);
 
     input Clock, Resetn, w;
-    output z;
+    output reg z;
     reg [3:1] y, Y;                    //y: Present State. Y: Next State.
     parameter [3:1] A=3'b000,B=3'b001,C=3'b010,D=3'b011,E=3'b100;
     initial y=3'b000;
@@ -60,5 +60,6 @@ module Mealy00  (Clock, Resetn, w, z);
     always @(negedge Resetn, posedge Clock) begin
          if(Resetn==0) y<=A;             //If a reset input occured, it goes back to the initial state A.
         else y<=Y;
+    end
 
 endmodule
