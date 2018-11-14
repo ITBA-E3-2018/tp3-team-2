@@ -86,6 +86,84 @@ Simulation the complete circuit in Verilog and testing the possibles values of i
         \caption{\color{cyan}Exercise 1: Simulation results}
         \label{fig:ej1mealyw}
     \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Para Maleeeee
+
+Esto es Y1
+\begin{center}
+        \begin{Karnaugh}
+            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
+            \contingut{
+            0,0,1,0,
+            0,X,X,X,
+            1,0,0,0,
+            0,X,X,X}
+            \implicant{2}{6}{red}
+            \implicant{8}{8}{green}
+%            \implicant{12}{8}{orange}
+%            \implicantdaltbaix[3pt]{1}{9}{blue}
+            %\implicantcantons[2pt]{orange}
+            %\implicantcostats{4}{14}{green}
+        \end{Karnaugh}
+    \end{center}
+
+Y2
+\begin{center}
+        \begin{Karnaugh}
+            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
+            \contingut{
+            0,0,1,0,
+            0,X,X,X,
+            0,1,1,0,
+            1,X,X,X}
+            \implicant{2}{10}{red}
+            \implicant{12}{14}{green}
+%            \implicant{12}{8}{orange}
+            \implicant{13}{9}{blue}
+%            \implicantdaltbaix[3pt]{1}{9}{blue}
+            %\implicantcantons[2pt]{orange}
+            %\implicantcostats{4}{14}{green}
+        \end{Karnaugh}
+    \end{center}
+  
+  Y3  
+\begin{center}
+        \begin{Karnaugh}
+            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
+            \contingut{
+            0,0,0,0,
+            0,X,X,X,
+            0,0,0,1,
+            0,X,X,X}
+            \implicant{15}{11}{red}
+%            \implicant{12}{14}{green}
+%%            \implicant{12}{8}{orange}
+%            \implicant{13}{9}{blue}
+%            \implicantdaltbaix[3pt]{1}{9}{blue}
+            %\implicantcantons[2pt]{orange}
+            %\implicantcostats{4}{14}{green}
+        \end{Karnaugh}
+    \end{center}
+    
+    Z
+    \begin{center}
+        \begin{Karnaughvuit}
+            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
+            \minterms{4}
+        \maxterms{0,1,2,3}
+        \indeterminats{5,6,7}
+            \implicant{4}{6}{red}
+%            \implicant{12}{14}{green}
+%%            \implicant{12}{8}{orange}
+%            \implicant{13}{9}{blue}
+%            \implicantdaltbaix[3pt]{1}{9}{blue}
+            %\implicantcantons[2pt]{orange}
+            %\implicantcostats{4}{14}{green}
+        \end{Karnaughvuit}
+    \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \end{document}
 
