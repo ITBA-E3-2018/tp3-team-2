@@ -2,7 +2,7 @@
 # Makefile for LaTeX
 ##################################################################
 
-REPORT_FILE = ReportAssignment1
+REPORT_FILE = ReportAssignment3
 OTHER = *~ *.aux *.dvi *.toc *.bbl *.blg *.gz *.out *.thm *.ps *.idx *.ilg *.ind *.log *.fdb_latexmk *.fls
 
 informe: $(REPORT_FILE).tex
