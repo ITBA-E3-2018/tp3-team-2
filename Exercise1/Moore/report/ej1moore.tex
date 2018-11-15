@@ -72,7 +72,71 @@ on Figure \ref{fig:moore_schem}.
     \end{center}
 \end{figure}
 
-After it was fully implemented and tested, the following measurements were taken:
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{final_build.png}
+        \includegraphics[scale=0.85]{final_back.png}
+        \caption{Final Physical device (front/back)}
+        \label{fig:moore_build}
+    \end{center}
+\end{figure}
 
+After it was fully implemented and tested, several measurements were taken to figure out its characteristics.
+In Figures \ref{fig:moore_nres} and \ref{fig:moore_nres_delay} both the functionality and the delay between the output
+and the reset input can be seen and were measured to be 6.6ns.
 
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_1_4nreset.png}
+        \caption{Reset (pink) functionality testing}
+        \label{fig:moore_nres}
+    \end{center}
+\end{figure}
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_nreset_delay.png}
+        \caption{Reset (pink) delay measurements with B1(green) and B2(blue)}
+        \label{fig:moore_nres_delay}
+    \end{center}
+\end{figure}
+
+The delay between the clock's positive edge and the output signals was also measured to be around 30ns in Figure \ref{fig:moore_delays}.
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_1.png}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_1k.png}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_100k_.png}
+        \caption{I/O Delay measurements at 1Hz, 1 kHz and 100 kHz respectively}
+        \label{fig:moore_delays}
+    \end{center}
+\end{figure}
+
+Lastly, some general testing for the correct behaviour of the machine was tested, which was the one expected and
+designed, as well as consistent to the one obtained in the Verilog simulation. From Figures \ref{fig:moore_max} and 
+\ref{fig:moore_min} it can be seen that the maximum output voltage is around 4.3V when fed with a 5V source and a
+minimum of near 0V, taking into account the noise.
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_1s4i_2b1_2b2_v1.png}
+        \caption{High I/O voltage measurements}
+        \label{fig:moore_max}
+    \end{center}
+\end{figure}
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/e3e1_1s4i_2b1_2b2_v0.png}
+        \caption{Low I/O voltage measurements}
+        \label{fig:moore_min}
+    \end{center}
+\end{figure}
+
+\newpage
 \subsection{Conclusions}
+From all the measurements taken from the physical device and the simulations ran in Verilog, it can be concluded
+that, given the case use this device would have, it is working as expected, with low delays between input and
+output signals and accounting for all possible input cases, with a safety precausion of disabling all pumps from
+activating if there is an error in the system or it is wished to be shut down.
