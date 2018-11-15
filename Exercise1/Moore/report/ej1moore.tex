@@ -1,0 +1,78 @@
+\section{Moore's Finite State Machine}
+
+Moore's Finite State Machine (FSM) follows a model where the next state of the machine is determined by the current
+inputs and its current state, while the output is determined by the current state of the machine, following the
+designed combinational logic.
+
+\subsection{Design}
+
+Given the specifications required of the pump controller, the functionality of the fsm was represented
+on Figure \ref{fig:moore_flow} and on Table \ref{fig:moore_table}, where "LnA" stands for "Last not Activated".
+
+\begin{figure}[h]
+    \begin{center}
+        \input{fsm_flowchart.tex}
+        \caption{Flow Diagram for Moore's Machine}
+        \label{fig:moore_flow}
+    \end{center}
+\end{figure}
+
+\begin{table}[ht]
+    \begin{center}
+        \input{fsm_table.tex}
+        \caption{State Transition Table}
+        \label{fig:moore_table}
+    \end{center}
+\end{table}
+
+It can be observed that an error state was added. This was to cover every possible case of inputs. It was decided that
+in case a "strange" input was received (Superior sensor activated while the Inferior sensor is not), both pumps should
+stop working, as that seemed to be the safer decision, as this seemed to simply be a replenishment system and an empty
+tank would alert the user of the error.
+
+After deducing the combinational logic behind the next state assignment and the corresponding outputs for each state,
+and taking into consideration the available components in the laboratory, the circuit in Figure \ref{fig:moore_circuit}
+was obtained.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\linewidth]{circuit.png}
+        \caption{Resulting circuit logic diagram}
+        \label{fig:moore_circuit}
+    \end{center}
+\end{figure}
+
+\subsection{Simulation}
+
+Before physically implementing the FSM, first it was simulated in Verilog and ran through a testbench, 
+where the waveform in Figure \ref{fig:moore_gtk} was obtained with gtkwave.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\linewidth]{gtkwave.png}
+        \caption{Simulation results from gtkwave}
+        \label{fig:moore_gtk}
+    \end{center}
+\end{figure}
+
+It needs to be mentioned that in the design, a method of resetting the machine was included in case it was needed.
+This reset case will set the LnA variable to 0 (which arms B1 for use) and deactivate both pumps until it is no longer
+set.
+
+\subsection{Physical Implementation}
+
+After confirming the correct behaviour of the device, it was implemented on a Printed Circuit Board with the schematic
+on Figure \ref{fig:moore_schem}.
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=\linewidth]{schematic.png}
+        \caption{Device Schematic}
+        \label{fig:moore_schem}
+    \end{center}
+\end{figure}
+
+After it was fully implemented and tested, the following measurements were taken:
+
+
+\subsection{Conclusions}

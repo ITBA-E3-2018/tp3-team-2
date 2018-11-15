@@ -1,0 +1,12 @@
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \multirow{3}{*}{Current State} & \multicolumn{4}{c}{Next State} & \multicolumn{2}{|c|}{Output} \\
+    & S I & S I & S I & S I & \multirow{2}{*}{B1} & \multirow{2}{*}{B2} \\
+    & 0 0 & 0 1 & 1 0 & 1 1 & & \\
+    \hline
+    Empty (0 0) & Empty & Half Full & Error & Full & 1 & 1 \\
+    Half Full (0 1)& Empty & Half Full & Error & Full & $\sim$LnA & LnA \\
+    Error (1 0)& Empty & Half Full & Error & Full & 0 & 0 \\
+    Full (1 1)& Empty & Half Full & Error & Full & 0 & 0 \\
+    \hline
+\end{tabular}
