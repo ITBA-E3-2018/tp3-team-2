@@ -1,7 +1,16 @@
 %EXCERCISE 1 :)
 
 \section{\color{olive}Excercise 2: State Machines to Detect the sequence 1-1-0-1}
-In this exercise, the detection of the sequence 1-1-0-1 inside a longer sequence of bits, is done with a Moore's state machine and with a Mealy's state machine. The main difference between these two state machines is that in Moore's one, the output only depends on the present state of the machine, while in Mealy's one, the output depends on the present state as well as on the input.
+In this exercise, the detection of the sequence 1-1-0-1 inside a longer sequence of bits, is done with a Moore's state machine and with a Mealy's state machine. The main difference between these two state machines is that in Moore's one, the output only depends on the present state of the machine, while in Mealy's one, the output depends on the present state as well as on the input. This causes a time displacement between the output of both state machines. Moore's output "answers" to the input one clock later after having reached the new state, while Mealy's output "answers" immediatly during the same clock that the input arrives. This is because Mealy's reacts not only according to the present state, but also depending on the input's value.
+
+For the implementation of both state machines, five states are needed and they are represented with the letters A to E:
+- A: "IDLE", the state in which the first digit of the sequence has not yet been detected.
+- B: The first digit of the sequence, "1", has arrived.
+- C: The second digit of the sequence, "1",  has arrived.
+- D: The third digit of the sequence, "0", has arrived.
+- E: The last digit of the sequence, "1", has arrived.
+
+It is important to mention that no matter which is the present state, whenever a reset in "0" arrives,
 
 \subsection{\color{purple}Moore Type State Machine}
 
