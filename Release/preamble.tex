@@ -1,10 +1,5 @@
 %%% Preamble
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
-
-%%AGREG0
-\usepackage{float}
-
-
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
 \usepackage[utf8]{inputenc}
@@ -15,8 +10,23 @@
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 \usepackage{import}
+\usepackage{multirow}
 
 \usepackage[margin=2cm]{geometry}
+
+%\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=4cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
 
 % %%% Custom sectioning
 \usepackage{sectsty}
@@ -143,7 +153,8 @@
 {
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (4,2);
-\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {bc} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {AB} node 
+[pos=0.7,below left,anchor=north east] {C} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},
