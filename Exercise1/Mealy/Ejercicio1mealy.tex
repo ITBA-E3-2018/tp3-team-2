@@ -13,13 +13,12 @@
 
 %%%%%EJ1.MEALY
 
-\section{\color{olive}Exercise 1: Tank Simulation}
 
 \subsection{\color{purple}Mealy State Machine}
 
 In the Mealy state machine, the output value not only depends on the state we are but also depends on the input values. This is to say the output could be represented as a function like $Z=f(X_1.....X_n,Q_1....Q_n)$ where Z: output, Q: State and X:Input event as could be visualize:
 
- \begin{figure}[h!]
+ \begin{figure}[H]
         \centering
         \includegraphics[scale=0.75]{../Exercise1/Mealy/mealydiagram.png}
         \caption{\color{cyan}Mealy sate machine simple representation}
@@ -28,7 +27,7 @@ In the Mealy state machine, the output value not only depends on the state we ar
 
 In this exercise, two sensors I and S function as input event to the state machine. Analyzing the possible states and event we obtain the following Mealy machine diagram:
 
- \begin{figure}[h!]
+ \begin{figure}[H]
         \centering
         \includegraphics[scale=0.65]{../Exercise1/Mealy/ej1mealy.png}
         \caption{\color{cyan}Exercise 1: Mealy sate machine flow chart}
@@ -39,7 +38,7 @@ Which is represented as follow:
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -58,7 +57,7 @@ Which is represented as follow:
 \pagebreak
 So the logic circuit would be:
 
- \begin{figure}[h!]
+ \begin{figure}[H]
         \centering
         \includegraphics[scale=1]{../Exercise1/Mealy/ej1mealycircuit.png}
         \caption{\color{cyan}Exercise 1: Mealy logic circuit}
@@ -71,7 +70,7 @@ We can notice that the input event and the output event are the same which could
 
 For the simulation of this stage machine, as the pump B1 and B2 alternate their function when $I = 1 y S = 0$ and for the activation of the pump that depends on output voltage is needed the following circuit is added:
 
- \begin{figure}[h!]
+ \begin{figure}[H]
         \centering
         \includegraphics[scale=1]{../Exercise1/Mealy/ej1mealycircuitplus.png}
         \caption{\color{cyan}Exercise 1: Mealy additional logic circuit for the simulation}
@@ -80,7 +79,7 @@ For the simulation of this stage machine, as the pump B1 and B2 alternate their 
     
 Simulation the complete circuit in Verilog and testing the possibles values of input in Gtkwave the result was:
 
- \begin{figure}[h!]
+ \begin{figure}[H]
         \centering
         \includegraphics[scale=0.7]{../Exercise1/Mealy/ej1mealysim1.png}\\
         \vspace{0.2cm}
@@ -90,80 +89,8 @@ Simulation the complete circuit in Verilog and testing the possibles values of i
     \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Para Maleeeee
-\pagebreak
-Esto es Y1
-\begin{center}
-        \begin{Karnaugh}
-            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
-            \contingut{
-            0,0,1,0,
-            0,X,X,X,
-            1,0,0,0,
-            0,X,X,X}
-            \implicant{2}{6}{red}
-            \implicant{8}{8}{green}
-%            \implicant{12}{8}{orange}
-%            \implicantdaltbaix[3pt]{1}{9}{blue}
-            %\implicantcantons[2pt]{orange}
-            %\implicantcostats{4}{14}{green}
-        \end{Karnaugh}
-    \end{center}
 
-Y2
-\begin{center}
-        \begin{Karnaugh}
-            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
-            \contingut{
-            0,0,1,0,
-            0,X,X,X,
-            0,1,1,0,
-            1,X,X,X}
-            \implicant{2}{10}{red}
-            \implicant{12}{14}{green}
-%            \implicant{12}{8}{orange}
-            \implicant{13}{9}{blue}
-%            \implicantdaltbaix[3pt]{1}{9}{blue}
-            %\implicantcantons[2pt]{orange}
-            %\implicantcostats{4}{14}{green}
-        \end{Karnaugh}
-    \end{center}
   
-  Y3  
-\begin{center}
-        \begin{Karnaugh}
-            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
-            \contingut{
-            0,0,0,0,
-            0,X,X,X,
-            0,0,0,1,
-            0,X,X,X}
-            \implicant{15}{11}{red}
-%            \implicant{12}{14}{green}
-%%            \implicant{12}{8}{orange}
-%            \implicant{13}{9}{blue}
-%            \implicantdaltbaix[3pt]{1}{9}{blue}
-            %\implicantcantons[2pt]{orange}
-            %\implicantcostats{4}{14}{green}
-        \end{Karnaugh}
-    \end{center}
-    
-    Z
-    \begin{center}
-        \begin{Karnaughvuit}
-            %cada 4 es una fila, la col 3 es la 4ta columna y 3fila es la 4 fila
-            \minterms{4}
-        \maxterms{0,1,2,3}
-        \indeterminats{5,6,7}
-            \implicant{4}{6}{red}
-%            \implicant{12}{14}{green}
-%%            \implicant{12}{8}{orange}
-%            \implicant{13}{9}{blue}
-%            \implicantdaltbaix[3pt]{1}{9}{blue}
-            %\implicantcantons[2pt]{orange}
-            %\implicantcostats{4}{14}{green}
-        \end{Karnaughvuit}
-    \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

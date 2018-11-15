@@ -1,11 +1,15 @@
 %%% Preamble
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 
-%%AGREG0 
+
+
 \usepackage{float}
-%\usepackage{geometry}
+%\usepackage{geometry} %AGREGOOOOO
 %\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
 %\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
+\usepackage{multirow}
+
+
 
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
@@ -15,26 +19,30 @@
 \usepackage[protrusion=true,expansion=true]{microtype}	
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage[pdftex]{graphicx}	
-\usepackage{url}
+\usepackage{url} %SACO ESTO
 \usepackage{import}
 
 \usepackage[margin=2cm]{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm} %SACO ESTO
 % %%% Custom sectioning
 \usepackage{sectsty}
 \allsectionsfont{\normalfont \scshape}
 
 
+%%COMENTO ESTO
+
 %%% Custom headers/footers (fancyhdr package)
-\usepackage{fancyhdr}
-\pagestyle{fancyplain}
-\fancyhead{}											% No page header
-\fancyfoot[L]{}											% Empty 
-\fancyfoot[C]{}											% Empty
-\fancyfoot[R]{\thepage}									% Pagenumbering
-\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
-\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
-\setlength{\headheight}{13.6pt}
+%\usepackage{fancyhdr}
+%\pagestyle{fancyplain}
+%\fancyhead{}											% No page header
+%\fancyfoot[L]{}											% Empty 
+%\fancyfoot[C]{}											% Empty
+%\fancyfoot[R]{\thepage}									% Pagenumbering
+%\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+%\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+%\setlength{\headheight}{13.6pt}
+
+
 
 
 %%% Equation and float numbering
@@ -59,6 +67,11 @@
 
     \usepackage{mathtools, nccmath}
     
+%%%%%%%%%%%%% AGREGOOOOO
+\usepackage{xcolor}
+
+
+
     \usepackage{tikz}
     \usetikzlibrary{matrix,calc}
 
@@ -253,4 +266,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+
+
+
+%%AGREG0 
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=4cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
 
